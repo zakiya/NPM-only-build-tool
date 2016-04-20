@@ -1,0 +1,25 @@
+{
+  "name": "buildtool",
+  "version": "1.0.0",
+  "description": "npm as a build tool",
+  "dependencies": {},
+  "devDependencies": {
+    "autoprefixer": "^6.3.6",
+    "breakpoint-sass": "^2.7.0",
+    "clean-css": "^3.4.12",
+    "node-sass": "^3.4.2",
+    "postcss": "^5.0.19",
+    "susy": "^2.2.12",
+    "uglify-js": "^2.6.2",
+    "watch": "^0.17.1"
+  },
+  "scripts": {
+    "sass-compile": "echo '=> sass-compile' && node-sass --include-path assets/scss assets/scss/main.scss assets/css/main.css",
+    "minify:js": "echo '=> minify:js' && uglifyjs assets/scripts/main.js -o dist/public/js/main.min.js",
+    "autoprefixer": "echo '=> autoprefixer' && postcss -u autoprefixer -r assets/css/main.css",
+    "minify:css": "echo '=> minify:css' && cleancss assets/css/main.css -o dist/public/css/main.min.css",
+    "watch": "watch 'npm run sass-compile && npm run minify:js && npm run autoprefixer && npm run minify:css' assets/scripts/ assets/scss/"
+  },
+  "author": "ZK",
+  "license": "ISC"
+}
