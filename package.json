@@ -21,5 +21,5 @@
     "watch": "watch 'npm run sass-compile && npm run minify:js && npm run autoprefixer && npm run minify:css' assets/scripts/ assets/scss/"
   },
   "author": "ZK",
-  "license": "ISC"
+  "license": "gpl"
 }
